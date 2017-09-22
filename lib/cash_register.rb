@@ -19,7 +19,7 @@ class CashRegister
       self.items << item
       qty-=1
     end
-    @total
+    self.total
   end
 
   def apply_discount
