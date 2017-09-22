@@ -11,7 +11,9 @@ class CashRegister
 
   def add_item(item, price, qty = 1)
     self.total += price * qty
-    self.last_item = item
+    self.last_item[item] = Array.new
+    self.last_item[item] << price
+    self.last_item[item] << qty
     while qty > 0
       self.items << item
       qty-=1
