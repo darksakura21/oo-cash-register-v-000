@@ -9,20 +9,20 @@ class CashRegister
   end
 
   def add_item(item, price, qty = 1)
-    @total += price * qty
+    self.total += price * qty
     while qty > 0
-      @items << item
+      self.items << item
       qty-=1
     end
     @total
   end
 
   def apply_discount
-    if @discount > 0
-      percentage_of_total = 1 - (@discount * 0.01)
-      @total *= percentage_of_total
-      @total
-      "After the discount, the total comes to $#{total.to_i}."
+    if self.discount > 0
+      percentage_of_total = 1 - (self.discount * 0.01)
+      self.total *= percentage_of_total
+      self.total
+      "After the discount, the total comes to $#{self.total.to_i}."
     else
       "There is no discount to apply."
     end
