@@ -1,12 +1,11 @@
 
 class CashRegister
-  attr_accessor :discount, :total, :items, :lists
+  attr_accessor :discount, :total, :items, :last_item
   # attr_reader :total <-- Q: Not sure why this isnt working.
   def initialize(discount = 0)
     @items = Array.new
     @discount = discount
     @total = 0
-    @lists = Hash.new
   end
 
   def add_item(item, price, qty = 1)
@@ -14,7 +13,6 @@ class CashRegister
     while qty > 0
       self.items << item
       qty-=1
-      self.lists[item] = price
     end
     @total
   end
@@ -31,7 +29,7 @@ class CashRegister
   end
 
   def void_last_transaction
-    
+
   end
 
 end
