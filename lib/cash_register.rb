@@ -6,6 +6,7 @@ class CashRegister
     @items = Array.new
     @discount = discount
     @total = 0
+    @last_item = Hash.new
   end
 
   def add_item(item, price, qty = 1)
