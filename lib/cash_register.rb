@@ -14,6 +14,7 @@ class CashRegister
     while qty > 0
       self.items << item
       qty-=1
+      self.lists[item] = price
     end
     @total
   end
