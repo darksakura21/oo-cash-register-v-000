@@ -14,6 +14,7 @@ class CashRegister
     self.last_item[item] = Array.new
     self.last_item[item] << price
     self.last_item[item] << qty
+    self.last_item
     while qty > 0
       self.items << item
       qty-=1
