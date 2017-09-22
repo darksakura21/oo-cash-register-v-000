@@ -22,7 +22,7 @@ class CashRegister
       percentage_of_total = 1 - (@discount * 0.01)
       @total *= percentage_of_total
       @total
-      "After the discount, the total comes to #{total}."
+      "After the discount, the total comes to $#{total.to_i}."
     else
       "There is no discount to apply."
     end
