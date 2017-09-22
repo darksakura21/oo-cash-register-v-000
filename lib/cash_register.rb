@@ -1,6 +1,6 @@
 
 class CashRegister
-  attr_accessor :discount, :total, :items
+  attr_accessor :discount, :total, :items, :lists
   # attr_reader :total <-- Q: Not sure why this isnt working.
   def initialize(discount = 0)
     @items = Array.new
