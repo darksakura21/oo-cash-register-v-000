@@ -6,14 +6,15 @@ class CashRegister
     @items = Array.new
     @discount = discount
     @total = 0
-    @last_item = Hash.new
+    @last_item = Array.new
   end
 
   def add_item(item, price, qty = 1)
     self.total += price * qty
-    self.last_item[item] = Array.new
-    self.last_item[item] << price
-    self.last_item[item] << qty
+    self.last_item = Array.new
+    self.last_item << item
+    self.last_item << price
+    self.last_item << qty
     self.last_item
     while qty > 0
       self.items << item
@@ -34,7 +35,7 @@ class CashRegister
   end
 
   def void_last_transaction
-
+    self.total = self.total - (self.last_item)
   end
 
 end
